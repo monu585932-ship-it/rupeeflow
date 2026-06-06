@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>⚡ DevMatrix Pro - Ultimate Decentralized Cyber Suite</title>
+    <style>
+        :root {
+            --bg-pure: #030712;
+            --panel-core: #0b0f19;
+            --neon-glow: #06b6d4;
+            --neon-matrix: #10b981;
+            --neon-toxic: #a855f7;
+            --border-slate: #1f2937;
+            --text-silver: #f3f4f6;
+            --text-dim: #6b7280;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Courier New', Courier, monospace; }
+        body { background-color: var(--bg-pure); color: var(--text-silver); min-height: 100vh; padding: 15px 10px; display: flex; flex-direction: column; align-items: center; }
+        
+        .container { max-width: 520px; width: 100%; }
+        
+        /* Cyber Neon Header */
+        header { text-align: center; padding: 25px 0; margin-bottom: 15px; border-bottom: 2px dashed var(--border-slate); }
+        header h1 { font-size: 28px; font-weight: 900; letter-spacing: -1px; text-shadow: 0 0 12px rgba(6, 182, 212, 0.4); }
+        header h1 span { color: var(--neon-glow); }
+        header p { color: var(--text-dim); font-size: 11px; margin-top: 6px; font-weight: bold; }
+
+        /* Multi-Page Navigation Grid */
+        .cyber-nav { display: flex; gap: 6px; background: var(--panel-core); border: 1px solid var(--border-slate); border-radius: 12px; padding: 6px; margin-bottom: 20px; }
+        .nav-node { flex: 1; background: transparent; border: none; color: var(--text-dim); padding: 12px 5px; font-weight: bold; font-size: 11px; cursor: pointer; border-radius: 8px; text-transform: uppercase; transition: all 0.2s ease-in-out; }
+        .nav-node.active { background: #111827; color: var(--neon-glow); border: 1px solid rgba(6, 182, 212, 0.3); box-shadow: 0 0 8px rgba(6, 182, 212, 0.15); }
+
+        /* Core Views Controller */
+        .matrix-panel { display: none; background: var(--panel-core); border: 1px solid var(--border-slate); border-radius: 20px; padding: 22px 18px; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.7); }
+        .matrix-panel.active { display: block; animation: panelLaunch 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards; }
+
+        /* Form Components */
+        .panel-section { margin-bottom: 18px; }
+        label { display: block; font-size: 11px; font-weight: bold; text-transform: uppercase; margin-bottom: 8px; letter-spacing: 0.5px; }
+        .txt-cyan { color: var(--neon-glow); }
+        .txt-matrix { color: var(--neon-matrix); }
+        .txt-toxic { color: var(--neon-toxic); }
+        
+        .terminal-input { width: 100%; padding: 14px; background: var(--bg-pure); border: 1px solid var(--border-slate); border-radius: 10px; color: #fff; font-size: 13px; outline: none; transition: all 0.2s; }
+        .terminal-input:focus { border-color: var(--neon-glow); box-shadow: 0 0 8px rgba(6, 182, 212, 0.2); }
+        textarea.terminal-input { height: 90px; resize: none; }
+        
+        /* Cyber Operational Triggers */
+        .cyber-btn { width: 100%; padding: 15px; border: none; border-radius: 10px; font-size: 13px; font-weight: bold; cursor: pointer; text-transform: uppercase; letter-spacing: 0.5px; transition: transform 0.1s; margin-top: 8px; }
+        .cyber-btn:active { transform: scale(0.98); }
+        .btn-cyan { background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%); color: #000; box-shadow: 0 4px 14px rgba(6, 182, 212, 0.3); }
+        .btn-matrix { background: linear-gradient(135deg, #10b981 0%, #059669 100%); color: #000; box-shadow: 0 4px 14px rgba(16, 185, 129, 0.3); }
+        .btn-toxic { background: linear-gradient(135deg, #a855f7 0%, #7e22ce 100%); color: #fff; box-shadow: 0 4px 14px rgba(168, 85, 247, 0.3); }
+
+        /* Output Diagnostics Display Box */
+        .output-terminal { background: #02040a; border: 1px dashed var(--border-slate); border-radius: 10px; padding: 14px; margin-top: 15px; word-break: break-all; font-size: 12px; display: none; color: #34d399; }
+        #stegoRenderView { max-width: 100%; margin-top: 15px; border-radius: 8px; border: 1px solid var(--border-slate); display: none; }
+
+        /* Fake Terminal Logs Engine (Click Multiplier) */
+        .log-loader { display: none; background: #000; border: 1px solid #1e293b; border-radius: 10px; padding: 12px; font-size: 11px; color: #84cc16; margin-top: 12px; max-height: 80px; overflow: hidden; }
+
+        /* 📌 DYNAMIC AD REVENUE NODES */
+        .ad-broker-container { min-height: 80px; background: rgba(31, 41, 55, 0.2); border: 1px dashed var(--border-slate); border-radius: 12px; margin: 20px 0; display: flex; align-items: center; justify-content: center; font-size: 10px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 1px; }
+
+        @keyframes panelLaunch { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+    </style>
+    
+    <!-- 💰 TARGET: MACBOOK REVENUE INTERACTION LAYER (MONETAG SMART TAG) -->
+    <script src="https://alwingulla.com/88/ed/3a/88ed3a652434d394142643501.js" async defer></script>
+</head>
+<body onclick="executeDynamicAdRefresh()">
+
+<div class="container">
+    <header>
+        <h1>Cyber<span>Matrix</span> v2.0</h1>
+        <p>[ SERVERLESS HIGH-PERFORMANCE UTILITY FRAMEWORK ]</p>
+    </header>
+
+    <!-- Multi-Page SPA Navigation Controls -->
+    <div class="cyber-nav" onclick="event.stopPropagation()">
+        <button class="nav-node active" id="node-stego" onclick="dispatchRoute('#/stego')">🔒 Stegano</button>
+        <button class="nav-node" id="node-conv" onclick="dispatchRoute('#/conv')">🎬 WebP Node</button>
+        <button class="nav-node" id="node-obfus" onclick="dispatchRoute('#/obfus')">⚡ Locker</button>
+    </div>
+
+    <!-- 📌 AD ZONE 1: TOP RESPONSIVE BLOCK (Adsterra 468x60 Placement) -->
+    <div class="ad-broker-container" onclick="executeDynamicAdRefresh()">
+        [ ADSTERRA TOP SPONSOR NODE ]
+    </div>
+
+    <!-- ==========================================
+         VIEW 1: IMAGE STEGANOGRAPHY ENGINE
+         ========================================== -->
+    <div id="panel-stego" class="matrix-panel active" onclick="event.stopPropagation()">
+        <div class="panel-section">
+            <label class="txt-cyan">1. Inject Secret Node Payload (Encode)</label>
+            <input type="file" id="stegoImgInput" class="terminal-input" accept="image/*">
+            <textarea id="stegoPayloadText" class="terminal-input" style="margin-top:8px;" placeholder="Type secure text packet payload strings here..."></textarea>
+            <button class="cyber-btn btn-cyan" onclick="triggerProcess('stego-enc')">Encode Payload & Export</button>
+            <div class="log-loader" id="loader-stego-enc"></div>
+            <img id="stegoRenderView" alt="Payload Map Buffer Image">
+        </div>
+
+        <div class="panel-section" style="margin-top: 25px; border-top: 1px dashed var(--border-slate); padding-top: 15px;">
+            <label class="txt-cyan">2. Extract Payload Array (Decode)</label>
+            <input type="file" id="stegoExtractInput" class="terminal-input" accept="image/*" onchange="triggerProcess('stego-dec')">
+            <div class="log-loader" id="loader-stego-dec"></div>
+            <div class="output-terminal" id="stegoTerminalConsole"></div>
+        </div>
+    </div>
+
+    <!-- ==========================================
+         VIEW 2: REAL GRAPHICS CONVERTER MODULE
+         ========================================== -->
+    <div id="panel-conv" class="matrix-panel" onclick="event.stopPropagation()">
+        <div class="panel-section">
+            <label class="txt-matrix">Input MP4 Stream Buffer</label>
+            <input type="file" id="videoAssetSrc" class="terminal-input" accept="video/mp4">
+            <button class="cyber-btn btn-matrix" onclick="triggerProcess('video-conv')">Compile WebP Sequence Array</button>
+            <div class="log-loader" id="loader-video-conv"></div>
+        </div>
+        <div class="output-terminal" id="convConsolePanel" style="text-align: center;">
+            <p style="color:var(--neon-matrix); font-weight:bold; margin-bottom:8px;">Matrix Compilation Loop Finished!</p>
+            <img id="compiledFrameOutput" style="max-width:100%; border-radius:8px; border:1px solid var(--border-slate);">
+            <br>
+            <a id="downloadAnchorTrigger" class="cyber-btn btn-matrix" style="display:inline-block; text-decoration:none; text-align:center; margin-top:12px; font-size:11px; padding:10px;">Download System Asset</a>
+        </div>
+    </div>
+
+    <!-- ==========================================
+         VIEW 3: CORE SCRIPT OBFUSCATOR LOCKER
+         ========================================== -->
+    <div id="panel-obfus" class="matrix-panel" onclick="event.stopPropagation()">
+        <div class="panel-section">
+            <label class="txt-toxic">Target Javascript Raw Strings</label>
+            <textarea id="rawScriptContent" class="terminal-input" placeholder="function initializeGrid() { console.log('Cluster Active'); }"></textarea>
+            <button class="cyber-btn btn-toxic" onclick="triggerProcess('script-lock')">Obfuscate Data Matrix</button>
+            <div class="log-loader" id="loader-script-lock"></div>
+        </div>
+        <div class="output-terminal" id="obfusConsolePanel">
+            <label class="txt-toxic" style="margin-bottom:6px;">Hexadecimal Token Block Output:</label>
+            <textarea id="obfuscatedPayloadTarget" class="terminal-input" style="height:100px; font-size:11px; background:#000; color:#10b981;" readonly></textarea>
+            <button class="cyber-btn btn-cyan" style="padding:10px; font-size:11px; margin-top:8px;" onclick="copyObfuscatedPayload()">Copy Token Arrays</button>
+        </div>
+    </div>
+
+    <!-- 📌 AD ZONE 2: HIGH DENSITY BOX (Adsterra 300x250 Placement) -->
+    <div class="ad-broker-container" style="min-height: 180px;" onclick="executeDynamicAdRefresh()">
+        [ ADSTERRA RECTANGLE CONVERSION NODE ]
+    </div>
+
+    <!-- Master Compute Engine Canvas Allocation Node -->
+    <canvas id="masterComputeCanvas" style="display: none;"></canvas>
+</div>
+
+<script>
+    /* ==========================================
+       1. REVENUE FLOW HOOKS (MONETAG INTERCEPT VALUE)
+       ========================================== */
+    function executeDynamicAdRefresh() {
+        console.log("[DEV-MATRIX ENGINE] Ad Vector Ping Issued.");
+        if (typeof window.refreshMonetagAd === 'function') { window.refreshMonetagAd(); }
+    }
+
+    /* ==========================================
+       2. DYNAMIC TERMINAL LOADER ENGINE (CLICK MULTIPLIER)
+       ========================================== */
+    function triggerProcess(actionType) {
+        executeDynamicAdRefresh();
+        const loader = document.getElementById(`loader-${actionType}`);
+        if (!loader) { runCoreAlgorithm(actionType); return; }
+
+        loader.style.display = "block";
+        loader.innerHTML = "> Accessing browser execution memory...<br>> Spawning thread clusters...";
+
+        let step = 0;
+        const processTimer = setInterval(() => {
+            step++;
+            if (step === 1) loader.innerHTML += "<br>> Processing binary grid values...";
+            if (step === 2) {
+                loader.innerHTML += "<br>> Injecting localized data frames...";
+                executeDynamicAdRefresh(); // Mid-process ad trigger checkpoint
+            }
+            if (step >= 3) {
+                clearInterval(processTimer);
+                loader.style.display = "none";
+                loader.innerHTML = "";
+                runCoreAlgorithm(actionType);
+            }
+        }, 700); // 2.1 Seconds intentional delay to maximize retention
+    }
+
+    function runCoreAlgorithm(actionType) {
+        if (actionType === 'stego-enc') executeStegoEncoding();
+        if (actionType === 'stego-dec') executeStegoDecoding();
+        if (actionType === 'video-conv') executeVideoProcessing();
+        if (actionType === 'script-lock') executeScriptObfuscation();
+    }
+
+    /* ==========================================
+       3. CLIENT-SIDE MULTI-PAGE HARDWARE ROUTER (HASH GRID)
+       ========================================== */
+    function dispatchRoute(hashTarget) {
+        executeDynamicAdRefresh();
+        window.location.hash = hashTarget;
+        
+        document.querySelectorAll('.matrix-panel').forEach(panel => panel.classList.remove('active'));
+        document.querySelectorAll('.nav-node').forEach(node => node.classList.remove('active'));
+        
+        if (hashTarget === '#/conv') {
+            document.getElementById('panel-conv').classList.add('active');
+            document.getElementById('node-conv').classList.add('active');
+        } else if (hashTarget === '#/obfus') {
+            document.getElementById('panel-obfus').classList.add('active');
+            document.getElementById('node-obfus').classList.add('active');
+        } else {
+            document.getElementById('panel-stego').classList.add('active');
+            document.getElementById('node-stego').classList.add('active');
+        }
+    }
+
+    window.addEventListener('hashchange', () => dispatchRoute(window.location.hash));
+    window.addEventListener('load', () => dispatchRoute(window.location.hash || '#/stego'));
+
+    /* ==========================================
+       4. FUNCTIONAL ALGORITHMIC MODULES (REAL COMPUTING)
+       ========================================== */
+    
+    // 🔒 MODULE 1: STEGANOGRAPHY PIXEL PROCESSING
+    function executeStegoEncoding() {
+        const fileNode = document.getElementById('stegoImgInput').files[0];
+        const secretStr = document.getElementById('stegoPayloadText').value;
+        if (!fileNode || !secretStr) { alert("Matrix Fault: Missing media package or string data context."); return; }
+
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            const runtimeImg = new Image();
+            runtimeImg.onload = function() {
+                const cvs = document.getElementById('masterComputeCanvas');
+                const ctx = cvs.getContext('2d');
+                cvs.width = runtimeImg.width; cvs.height = runtimeImg.height;
+                ctx.drawImage(runtimeImg, 0, 0);
+
+                const dataPackage = ctx.getImageData(0, 0, cvs.width, cvs.height);
+                const colorBytes = dataPackage.data;
+                
+                const packedPayload = secretStr + "##TERMINATOR_SIG##";
+                let bitPayloadStream = "";
+                for (let i = 0; i < packedPayload.length; i++) {
+                    let binaryByte = packedPayload.charCodeAt(i).toString(2);
+                    while (binaryByte.length < 8) binaryByte = "0" + binaryByte;
+                    bitPayloadStream += binaryByte;
+                }
+
+                if (bitPayloadStream.length > colorBytes.length) { alert("Matrix Error: Payload overflow boundary metrics."); return; }
+
+                for (let i = 0; i < bitPayloadStream.length; i++) {
+                    colorBytes[i] = (colorBytes[i] & 0xFE) | parseInt(bitPayloadStream[i]);
+                }
+
+                ctx.putImageData(dataPackage, 0, 0);
+                const compilationBlobUrl = cvs.toDataURL('image/png');
+                
+                const uiView = document.getElementById('stegoRenderView');
+                uiView.src = compilationBlobUrl; uiView.style.display = 'block';
+
+                const hook = document.createElement('a');
+                hook.href = compilationBlobUrl; hook.download = "cybermatrix_stego_node.png";
+                hook.click();
+                executeDynamicAdRefresh();
+            };
+            runtimeImg.src = e.target.result;
+        };
+        reader.readAsDataURL(fileNode);
+    }
+
+    function executeStegoDecoding() {
+        const fileNode = document.getElementById('stegoExtractInput').files[0];
+        if (!fileNode) return;
+
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            const runtimeImg = new Image();
+            runtimeImg.onload = function() {
+                const cvs = document.getElementById('masterComputeCanvas');
+                const ctx = cvs.getContext('2d');
+                cvs.width = runtimeImg.width; cvs.height = runtimeImg.height;
+                ctx.drawImage(runtimeImg, 0, 0);
+
+                const dataPackage = ctx.getImageData(0, 0, cvs.width, cvs.height);
+                const colorBytes = dataPackage.data;
+
+                let bitsCollector = "";
+                for (let i = 0; i < colorBytes.length; i++) { bitsCollector += (colorBytes[i] & 1).toString(); }
+
+                let parsedMessage = "";
+                for (let i = 0; i < bitsCollector.length; i += 8) {
+                    let characterCodeValue = parseInt(bitsCollector.substr(i, 8), 2);
+                    if (isNaN(characterCodeValue)) break;
+                    let nativeChar = String.fromCharCode(characterCodeValue);
+                    parsedMessage += nativeChar;
+
+                    if (parsedMessage.endsWith("##TERMINATOR_SIG##")) {
+                        parsedMessage = parsedMessage.replace("##TERMINATOR_SIG##", "");
+                        break;
+                    }
+                }
+                const terminalConsole = document.getElementById('stegoTerminalConsole');
+                terminalConsole.innerText = ">> DECRYPTED PAYLOAD OUTSTREAM:\n" + parsedMessage;
+                terminalConsole.style.display = "block";
+                executeDynamicAdRefresh();
+            };
+            runtimeImg.src = e.target.result;
+        };
+        reader.readAsDataURL(fileNode);
+    }
+
+    // 🎬 MODULE 2: CANVAS VECTOR VIDEO CONVERTER
+    function executeVideoProcessing() {
+        const videoResource = document.getElementById('videoAssetSrc').files[0];
+        if (!videoResource) { alert("Matrix Fault: Video source stream uncommitted."); return; }
+
+        const localDataBlobUrl = URL.createObjectURL(videoResource);
+        const engineVideoDom = document.createElement('video');
+        engineVideoDom.src = localDataBlobUrl;
+        engineVideoDom.muted = true; engineVideoDom.playsInline = true;
+
+        engineVideoDom.onloadeddata = function() {
+            engineVideoDom.play();
+            const cvs = document.getElementById('masterComputeCanvas');
+            const ctx = cvs.getContext('2d');
+            cvs.width = engineVideoDom.videoWidth / 2; // Real-time client optimization compression
+            cvs.height = engineVideoDom.videoHeight / 2;
+
+            const processingLoopInterval = setInterval(() => {
+                if (engineVideoDom.paused || engineVideoDom.ended) {
+                    clearInterval(processingLoopInterval);
+                    
+                    const renderingOutputWebpData = cvs.toDataURL('image/webp', 0.75);
+                    document.getElementById('compiledFrameOutput').src = renderingOutputWebpData;
+                    document.getElementById('downloadAnchorTrigger').href = renderingOutputWebpData;
+                    document.getElementById('downloadAnchorTrigger').download = "cybermatrix_sequence.webp";
+                    document.getElementById('convConsolePanel').style.display = 'block';
+                    
+                    URL.revokeObjectURL(localDataBlobUrl);
+                    executeDynamicAdRefresh();
+                } else {
+                    ctx.drawImage(engineVideoDom, 0, 0, cvs.width, cvs.height);
+                }
+            }, 65);
+        };
+    }
+
+    // ⚡ MODULE 3: HEXADECIMAL CRYPTIC OBFUSCATOR
+    function executeScriptObfuscation() {
+        const rawCodeTextData = document.getElementById('rawScriptContent').value;
+        if (!rawCodeTextData) { alert("Matrix Fault: Raw string initialization buffer empty."); return; }
+
+        let hexTokenArrays = [];
+        for (let i = 0; i < rawCodeTextData.length; i++) {
+            hexTokenArrays.push(rawCodeTextData.charCodeAt(i).toString(16));
+        }
+
+        const productionLockStringCode = `/* Locked via DevMatrix Core Obfuscator System */\neval((function(t){var c='';t.forEach(function(x){c+=String.fromCharCode(parseInt(x,16))});return c;})(${JSON.stringify(hexTokenArrays)}));`;
+        
+        document.getElementById('obfuscatedPayloadTarget').value = productionLockStringCode;
+        document.getElementById('obfusConsolePanel').style.display = 'block';
+        executeDynamicAdRefresh();
+    }
+
+    function copyObfuscatedPayload() {
+        const dataTargetArea = document.getElementById('obfuscatedPayloadTarget');
+        dataTargetArea.select();
+        navigator.clipboard.writeText(dataTargetArea.value);
+        executeDynamicAdRefresh();
+        alert("Payload string flushed to clipboard context.");
+    }
+</script>
+</body>
+</html>
